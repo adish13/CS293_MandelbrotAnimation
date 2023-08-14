@@ -1,0 +1,8 @@
+all: mandelbrot.o interactive_mandelbrot
+
+SRC_FILE=mandelbrot_interactive.cpp
+mandelbrot.o: $(SRC_FILE)
+		g++ -c $(SRC_FILE) -o mandelbrot.o
+
+interactive_mandelbrot: mandelbrot.o
+		g++ mandelbrot.o -o interactive_mandelbrot -lsfml-graphics -lsfml-window -lsfml-system
